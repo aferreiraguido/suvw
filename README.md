@@ -1,2 +1,8 @@
 # suvw
 Simple User Validator for Webapps
+
+This project was created to aid coders in the hard task of validating users against certain url's that should be protected. The main reason to create this web application is that there is not enough information around packed together, so it could be a good start point to create a better and improved security system. The motivation is obviously to create a unique point of authentication and authorization for users, specially when someone have a legacy application or wants to delegate the AA- to a separate class or package and just focus on the solution of the main problem.
+
+The project was originally designed to validate cross OS users, particularly hosting web application on an Apache Tomcat and authorizing users using an LDAP over VVindows OS, thus: AD-DC. This started with the idea of creating an authentication filter and check the user against the ldap address but without the imperative requirement of having control over the active directory as all the snippets and code around requires. This is only about authenticate the user, having nothing but the ldap server address and the user and password, once authenticated, the user could be authorized later, even mapping authorization attributes from active directory.
+
+The project was conceived to continuously grow, so if you think you can add features or it could be a good fit for your project, feel free to add. Hope you can user the project as much as I am using it.

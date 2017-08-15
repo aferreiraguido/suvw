@@ -1,0 +1,34 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>SUVW</display-name>
+
+	<filter>
+		<filter-name>AuthorizeFilter</filter-name>
+		<filter-class>org.web.servlets.filters.Authorize</filter-class>
+		<init-param>
+			<param-name>authentication.type</param-name>
+			<param-value>ldap</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ldap.server</param-name>
+			<param-value>LDAP-SERVER</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ldap.principal</param-name>
+			<param-value>LDAP-USER</param-value>
+		</init-param>
+		<init-param>
+			<param-name>ldap.credentials</param-name>
+			<param-value>LDAP-PASSWORD</param-value>
+		</init-param>
+	</filter>
+	 
+	<filter-mapping>
+		<!--  Authorize every single page under root for this web app -->
+		<filter-name>AuthorizeFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+</web-app>
