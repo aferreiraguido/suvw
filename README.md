@@ -5,4 +5,4 @@ This project was created to aid coders in the hard task of validating users agai
 
 The project was originally designed to validate cross OS users, particularly hosting web application on an Apache Tomcat and authorizing users using an LDAP over VVindows OS, thus: AD-DC. This started with the idea of creating an authentication filter and check the user against the ldap address but without the imperative requirement of having control over the active directory as all the snippets and code around requires. This is only about authenticate the user, having nothing but the ldap server address and the user and password, once authenticated, the user could be authorized later, even mapping authorization attributes from active directory.
 
-The project was conceived to continuously grow, so if you think you can add features or it could be a good fit for your project, feel free to add. Hope you can user the project as much as I am using it.
+The project was conceived to continuously grow, so if you think you can add features or it could be a good fit for your project, feel free to add. Hope you can use the project as much as I am using it.
