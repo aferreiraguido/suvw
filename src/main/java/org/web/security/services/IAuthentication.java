@@ -11,6 +11,8 @@ public interface IAuthentication {
 	public void configureParameters(FilterConfig filterConfiguration);
 	public Object getParameterValue(String parameterName);
 
+	public Boolean requestUserCredentials();
+	public Boolean performAuthentication(String username, String password);
 	public Boolean performAuthentication();
 	
 	public String getUsername();
