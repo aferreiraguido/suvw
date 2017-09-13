@@ -2,6 +2,7 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
+<!-- This is the web.xml file to be configured for your particular system -->
 <web-app>
 	<display-name>SUVW</display-name>
 
@@ -13,19 +14,23 @@
 			<param-value>ldap</param-value>
 		</init-param>
 		<init-param>
-			<param-name>ldap.server</param-name>
+			<param-name>domain</param-name>
+			<param-value>LDAP-DOMAIN</param-value>
+		</init-param>
+		<init-param>
+			<param-name>server</param-name>
 			<param-value>LDAP-SERVER</param-value>
 		</init-param>
 		<init-param>
-			<param-name>ldap.login</param-name>
+			<param-name>login</param-name>
 			<param-value>URL-LOGIN-PAGE</param-value>
 		</init-param>
 		<init-param>
-			<param-name>ldap.principal</param-name>
+			<param-name>principal</param-name>
 			<param-value>LDAP-USER</param-value>
 		</init-param>
 		<init-param>
-			<param-name>ldap.credentials</param-name>
+			<param-name>credentials</param-name>
 			<param-value>LDAP-PASSWORD</param-value>
 		</init-param>
 	</filter>

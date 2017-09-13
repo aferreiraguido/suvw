@@ -14,6 +14,7 @@ import com.sun.jndi.ldap.LdapCtxFactory;
 
 public class Ldap implements IAuthentication {
 	
+	String domain = "";
 	String server = "";
 	
 	String principal = "";
@@ -28,12 +29,13 @@ public class Ldap implements IAuthentication {
 	}
 
 	public void configureParameters(FilterConfig filterConfiguration) {
-		server = filterConfiguration.getInitParameter("ldap.server");
+		domain = filterConfiguration.getInitParameter("domain");
+		server = filterConfiguration.getInitParameter("server");
 		
-		login = filterConfiguration.getInitParameter("ldap.login");
+		login = filterConfiguration.getInitParameter("login");
 
-		principal = filterConfiguration.getInitParameter("ldap.principal");
-		credentials = filterConfiguration.getInitParameter("ldap.credentials");
+		principal = filterConfiguration.getInitParameter("principal");
+		credentials = filterConfiguration.getInitParameter("credentials");
 	}
 
 	public Object getParameterValue(String parameterName) {
@@ -69,6 +71,10 @@ public class Ldap implements IAuthentication {
 		// check validity of username and password
 		if (username.length() * password.length() <= 0) {
 			return false;
+		} else {
+			if (this.domain.length() > 0) {
+				username = String.format("%s@%s", username, domain);
+			}
 		}
 		
 		String context = String.format("ldap://%s", this.server);
